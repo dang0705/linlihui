@@ -1,0 +1,92 @@
+<!--<view style="height: 100%;">-->
+<block wx:if="{{isLogin}}">
+	<block wx:if="{{roleId==='1'}}">
+		<view id="topTapWrapper">
+			<scroll-view
+				class="topTab"
+				scroll-x
+				scroll-left="{{tabScroll}}"
+				scroll-with-animiation="{{true}}"
+			>
+				<block wx:for="{{menu}}" wx:key="{{index}}">
+					<view
+						data-index="{{index}}"
+						class="menu {{activityIndex===index?'activity':''}}"
+						bindtap="switchMenu"
+					>
+						{{item}}
+					</view>
+				</block>
+			</scroll-view>
+		</view>
+	</block>
+	<view id="content"
+	      class="{{roleId==='1'?'hasTopTab':''}}"
+	      style="{{'height:'+(height)+'px;'}}">
+		<!--本周安排-->
+		
+		<this-week wx:if="{{!activityIndex}}"
+		           windowHeight="{{height}}"
+		           isThisWeekUpdate="{{isThisWeekUpdate}}"
+		           bind:gotoNextWeek="gotoNextWeek"
+		           bind:thisWeekUpdated="thisWeekUpdated"
+		           roleId="{{roleId}}"
+		           activeIndex="{{todayIndex}}"
+		           today="{{today}}"
+		></this-week>
+		<!--<next-week
+			wx:elif="{{activityIndex===1}}"
+			nextWeek="{{nextWeek}}"
+			nextWeekDayStart="{{nextWeekDayStart}}"
+			nextWeekDayEnd="{{nextWeekDayEnd}}"
+			nextWeekMonthStart="{{nextWeekMonthStart}}"
+			nextWeekMonthEnd="{{nextWeekMonthEnd}}"
+		></next-week>-->
+		<!--下周安排-->
+		<this-week wx:elif="{{activityIndex===1}}"
+		           activityIndex="1"
+		           nextWeekDayStart="{{nextWeekDayStart}}"
+		           nextWeekDayEnd="{{nextWeekDayEnd}}"
+		           nextWeekMonthStart="{{nextWeekMonthStart}}"
+		           nextWeekMonthEnd="{{nextWeekMonthEnd}}"
+		           windowHeight="{{height}}"
+		           isThisWeekUpdate="{{isThisWeekUpdate}}"
+		           isNextWeekUpdate="{{isNextWeekUpdate}}"
+		           bind:gotoNextWeek="gotoPrevWeek"
+		           bind:nextWeekUpdated="nextWeekUpdated"
+		           roleId="{{roleId}}"
+		           today="{{today}}"
+		></this-week>
+		
+		
+		<block wx:elif="{{activityIndex===2}}">
+			<activity-management
+				activityManagementList="{{activityManagementList}}"
+				bind:amUpdate="{{updateAm}}"
+				amUpdate="{{amUpdate}}"
+				isAMDataFinished="{{isAMDataFinished}}"
+			></activity-management>
+		</block>
+		<block wx:else>
+			<scroll-view
+				scroll-y
+				style="height: 100%;background: #eee"
+				scroll-with-animaition="{{true}}"
+			>
+				<place-management
+					placeList="{{placeList}}"
+					bind:placeUpdate="updatePlace"
+					placeUpdate="{{placeUpdate}}"
+					isPlaceDataFinished="{{isPlaceDataFinished}}"
+				></place-management>
+			</scroll-view>
+		
+		</block>
+	</view>
+</block>
+
+<block wx:else>
+	<view style="text-align: center">您尚未登陆,无法查看活动等信息</view>
+	<button bindtap="login" style="bottom:150rpx;" class="mainButton">立即登录</button>
+</block>
+<!--</view>-->

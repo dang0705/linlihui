@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "selector": "../../../components/selector/selector",
+    "switch": "../../../components/switch/switch"
+  },
+
+
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "活动发布/编辑",
+  "backgroundColor": "#fff",
+  "backgroundTextStyle": "light"
+}

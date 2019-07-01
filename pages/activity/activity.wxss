@@ -1,0 +1,51 @@
+@import "../../common/css/common.wxss";
+
+#topTapWrapper {
+	height: 60px;
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	background: #fff;
+}
+
+.topTab {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	transition: transform .6s;
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+	color: transparent;
+}
+#content.hasTopTab{
+	position: relative;
+	top: 60px;
+	
+}
+#content {
+	width: 100%;
+	bottom: 0;
+	background: #eee;
+}
+
+.menu {
+	height: 80%;
+	line-height: 80rpx;
+	border-right: none;
+	text-align: center;
+	display: inline-block;
+	padding: 0 2.5%;
+	width: 20%;
+}
+
+.activity {
+	border-bottom: 2px solid #f18603;
+	color: #f18603;
+}

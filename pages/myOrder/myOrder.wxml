@@ -1,0 +1,85 @@
+<block wx:if="{{isLogin}}">
+	<view style="background: #eee">
+		<view style="height: {{height}}px;">
+			<view id="family">
+				<view class="title">
+					<text>谁在邻里汇</text>
+				</view>
+				<block wx:for="{{familyList}}">
+					<view class="list familyList">
+						<view class="familyAvatar">
+							<image mode="scaleToFill"
+							       src="{{item.RelativesFileUrl||'../../common/img/avatar.jpg'}}"></image>
+						</view>
+						<view class="name">
+							<text>{{item.RelativesName}}</text>
+						</view>
+						<view class="place textOverFlow">
+							<text>一楼 健康驿站</text>
+						</view>
+						<view class="icon">
+							<image mode="aspectFill" class="camera" src="../../common/img/camera.png"></image>
+						</view>
+					</view>
+				</block>
+			</view>
+			<view style="background: #fff;padding: 0 20px;height: {{height-familyHeight}}px;">
+				<view class="title">
+					<text>预约记录</text>
+				</view>
+				<block wx:if="{{!orderList.length}}">
+					<text>
+						暂无预约记录
+					</text>
+				</block>
+				<block wx:else>
+					<scroll-view
+						scroll-y
+						style="height: {{height-(60+familyHeight)}}px">
+						<view class="myOrderList">
+							<view class="everyDaysOrder"
+							      wx:for="{{orderList}}"
+							      wx:key="index">
+								<view style="padding:0 0 20px 0;margin-left: -30px">
+									<text class="orderDate">{{item.activityDate}}</text>
+								</view>
+								<block wx:for="{{item.activityDetail}}"
+								       wx:key="index2"
+								       wx:for-item="detail">
+									<view class="eachTimeOrder">
+										<view class="timeAndPlace">
+											<view class="orderTime">{{detail.activityTime}}</view>
+											<view class="textOverFlow">{{detail.activityPlace}}</view>
+										</view>
+										<view class="activityDetails">
+											<view class="members textOverFlow">
+												<block wx:for="{{detail.activityMembers}}"
+												       wx:for-item="members"
+												       wx:key="index3"
+												>
+													<view>
+														<text>{{!members?'我':members}}</text>
+													</view>
+												</block>
+											</view>
+											<view style="width: 20%;">
+												<text style="font-size: 12.5pt;color: #333">参加</text>
+											</view>
+											<view class="activityName textOverFlow">
+												<text>{{detail.activityName}}</text>
+											</view>
+										</view>
+									</view>
+								</block>
+							</view>
+						</view>
+					</scroll-view>
+				</block>
+			</view>
+		</view>
+	</view>
+</block>
+<block wx:else>
+	<view style="text-align: center">您尚未登陆,无法查看活动等信息</view>
+	<button bindtap="login" style="bottom:150rpx;" class="mainButton">立即登录</button>
+</block>

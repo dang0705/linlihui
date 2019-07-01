@@ -1,0 +1,64 @@
+<view class="listWrapper">
+	<view>
+		<view class="list">
+			<text>活动</text>
+			<view class="content">
+				<selector
+					list="{{activityList}}"
+					key="ActivityName"
+					bind:selectorValue="getActivityVal"
+					value="{{activitySelected}}"
+				></selector>
+			</view>
+		</view>
+		<view class="list">
+			<text>场地</text>
+			<view class="content">
+				<selector
+					list="{{placeList}}"
+					key="FieldName"
+					bind:selectorValue="getPlaceVal"
+					value="{{placeSelected}}"
+				></selector>
+			</view>
+		</view>
+	</view>
+	<view>
+		<view class="list">
+			<text>全天</text>
+			<view class="content">
+				<switch
+					checked="{{isAllDay}}"
+					bind:switchStatus="switchStatus"
+				></switch>
+			</view>
+		</view>
+		<block wx:if="{{!isAllDay}}">
+			<view class="list">
+				<text>开始</text>
+				<view class="content">
+					<selector
+						mode="time"
+						time="{{startTime}}"
+						start="{{selectDateStartTime}}"
+						end="{{selectDateEndTime}}"
+						bind:time="getStartTime"
+					></selector>
+				</view>
+			</view>
+			<view class="list">
+				<text>结束</text>
+				<view class="content">
+					<selector
+						mode="time"
+						time="{{endTime}}"
+						start="{{startTime}}"
+						end="{{selectDateEndTime}}"
+						bind:time="getEndTime"
+					></selector>
+				</view>
+			</view>
+		</block>
+	</view>
+	<button wx:if="{{editFlag}}" class="mainButton" disabled="{{isDisabled}}" bindtap="save">活动发布</button>
+</view>

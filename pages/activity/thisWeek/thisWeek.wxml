@@ -1,0 +1,120 @@
+<view style="height: 100%;">
+	<!--这里如果是管理员,要扣除顶上60px的tab高度--->
+	<view style="height:160px;background: #fff;margin-bottom: 10px;">
+		<view style="padding: 0 40rpx;position: relative;">
+			<view class="title">
+				<text wx:if="{{role!=='1'}}" style="font-size: 40rpx;">本周安排</text>
+				<block wx:if="{{thisWeekMonthStart}}">
+					<text style="font-size: 30rpx;">
+						{{!activityIndex?thisWeekMonthStart+'月'+thisWeekDayStart+'日-'+thisWeekMonthEnd+'月'+thisWeekDayEnd+'日':
+						nextWeekMonthStart+'月'+nextWeekDayStart+'日-'+nextWeekMonthEnd+'月'+nextWeekDayEnd+'日'}}
+					</text>
+					<block wx:if="{{activityIndex}}">
+						<button class="copy" bindtap="_copy">复制上周安排</button>
+					</block>
+					<text wx:if="{{role==='1'}}" style="font-size: 80rpx;color:#f18603;font-weight: bold"
+					      bindtap="_add">+
+					</text>
+				</block>
+			</view>
+			<block wx:if="{{thisWeek.length}}">
+				<view class="weekListWrapper">
+					<view class="weekList">
+						<view wx:for="{{!activityIndex?thisWeek:nextWeek}}"
+						      wx:key="{{index}}"
+						      data-index="{{index}}"
+						      data-date="{{item.year+'-'+(item.month<10?'0'+item.month:item.month)+'-'+(item.date<10?'0'+item.date:item.date)}}"
+						      class="eachDay{{todayIndex===index?' activity':''}}{{item.month===thisWeekMonthEnd&&item.date<today?' before':''}}{{item.date==today?' today':''}}"
+						      bindtap="_eachDayTouch"
+						>
+							<view class="date">{{item.date}}</view>
+							<view class="date">{{item.day}}</view>
+						</view>
+					</view>
+					
+					<!--下周安排按钮-->
+					<!--<view class="gotoNextWeek" bindtap="_gotoNextWeek"></view>-->
+				</view>
+			</block>
+		
+		</view>
+	</view>
+	<!--<view-->
+	<!--style="{{role!=='1'?'height:'+(height-(160+10))+'px;':'height:'+(height-(210+10))+'px;'}}overflow:scroll"-->
+	<!--&gt;-->
+	<view
+		style="{{'height:'+(height-(160+10))+'px;'}}overflow:scroll"
+	>
+		<scroll-view
+			scroll-y
+			style="height: 100%;"
+			enable-back-to-top
+			lower-threshold="100"
+			bindscrolltolower="_getActivity"
+		>
+			<view class="activityMDetails {{!dataFinished?'getPadding':''}}">
+				<view style="background: #fff">
+					<view class="eachFloor">
+						<block wx:for="{{activityList}}"
+						       wx:key="{{item.ID}}"
+						>
+							<view class="management_list"
+							      bindtouchstart="_touchListStart"
+							      bindtouchend="_touchListEnd"
+							>
+								<icon
+									type="cancel"
+									size="30"
+									wx:if="{{canDelete}}"
+									bindtap="_delete"
+									data-id="{{item.ID}}"/>
+								<view
+									data-info="{{item}}"
+									catchtap="{{role==='1'?'_edit':'_subscribe'}}"
+									class="management_list_item"
+									style="height: 150rpx;">
+									<block wx:if="{{item.ImgFileUrl}}">
+										<image
+										       class="m_img" style="width: 400rpx;"
+										       src="{{item.isLoaded?'https://xt.shi1.cn'+item.ImgFileUrl:'../../../common/img/noImg.jpg'}}"
+										       data-index="{{index}}"
+										       bindload="_imgLoaded"
+										       mode="aspectFill">
+										</image>
+									</block>
+									<block wx:else>
+										<image class="m_img" style="width: 400rpx;"
+										       src="../../../common/img/noImg.jpg"
+										       mode="aspectFit">暂无图片
+										</image>
+									</block>
+									<view style="width: 100%;height: 100%;position: relative;"
+									>
+										<view>{{item.ActivityName}}</view>
+										<view
+											class="activityInfo"
+										>
+											<view class="smallFont" style="color:#bbbbbb">
+												{{item.FieldFloor+'　'+item.FieldName }}
+											</view>
+											<block wx:if="{{item.AllDayTimeStatus==='1'}}">
+												<view style="color:#f18603 ">全天</view>
+											</block>
+											<block wx:else>
+												<view>{{item.StartTime+'-'+item.EndTime}}</view>
+											</block>
+										</view>
+									</view>
+								</view>
+							</view>
+						</block>
+					</view>
+				</view>
+			</view>
+			<block wx:if="{{dataFinished}}">
+				<view class="finished">--没有更多了--</view>
+			</block>
+		</scroll-view>
+	
+	</view>
+</view>

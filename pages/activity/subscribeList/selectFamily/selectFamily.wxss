@@ -1,0 +1,52 @@
+@import "../../../../common/css/common.wxss";
+.title{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 40rpx;
+	margin-bottom: 100rpx;
+	border-bottom: 1px solid #d5d5d5;
+}
+.familyList label{
+	width: 20%;
+	margin: 0 2%;
+	display: inline-block;
+}
+checkbox-group{
+	width: 100%;
+	text-align: center;
+}
+.checkWrapper{
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.avatarWrapper{
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+	overflow: hidden;
+	border-radius: 50%;
+	margin-bottom: 12rpx;
+	
+}
+image{
+	width:100%;
+	height: auto;
+	display: block;
+}
+.infoWrapper{
+	text-align: center;
+	font-size: 12.5pt;
+	color: #999;
+	width: 100%;
+	display: inline-block;
+	position: relative;
+}
+checkbox{
+	opacity: 0;
+}
+

@@ -1,0 +1,40 @@
+@import "../../../../common/css/common.wxss";
+.list:after{
+	content: '';
+	border: none;
+}
+
+#title{
+	display: flex;
+	justify-content: left;
+	align-items: center;
+}
+text,input{
+	height: 100%;
+}
+text{
+	display: inline-block;
+	vertical-align: top;
+	width: 20%;
+}
+input{
+	width: 80%;
+}
+#placeTitle{
+	display: inline-block;
+}
+#uploadImgWrapper{
+	padding: 30rpx 0;
+	height: auto;
+	display: flex;
+	justify-content: left;
+}
+
+textarea{
+	width: calc(100% - 40px);
+	padding: 0 20px;
+	height: 100% !important;
+	overflow: scroll;
+	background: #eee;
+	white-space: normal;
+}

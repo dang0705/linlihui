@@ -1,0 +1,60 @@
+<view class="familyList listWrapper">
+	<view class="title">
+		<text style="font-size: 15pt;color:#f18603 ">预约人</text>
+		<text style="font-size: 10.5pt; color: #999;">{{title}}</text>
+	</view>
+	<checkbox-group bindchange="selectFamily">
+		<block wx:for="{{familyList}}" wx:key="{{item.ID}}">
+			<label class="familyItem" wx:if="{{index===0}}" for="memberCheck{{familyList.length}}">
+				<view class="infoWrapper">
+					<view class="checkWrapper">
+						<image class="isChecked"
+						       wx:if="{{isMyChecked}}"
+						       width="100%"
+						       mode="widthFix"
+						       src="../../../../common/img/checked.png"
+						></image>
+					</view>
+					<view class="avatarWrapper">
+						<image class="avatar"
+						       src="{{myAvatar||'../../../../common/img/avatar.jpg'}}"
+						       mode="widthFix"></image>
+					</view>
+					<text class='memberName'>我</text>
+				</view>
+				<checkbox value="{{myID}}"
+				          id="memberCheck{{familyList.length}}"
+				          checked="{{isMyChecked}}"/>
+			</label>
+			<label bindtap="checkGetIndex"
+			       data-index="{{index}}"
+			       class="familyItem" for="memberCheck{{index}}">
+				<view class="infoWrapper">
+					<view class="checkWrapper">
+						<image class="isChecked"
+						       wx:if="{{item.checked}}"
+						       width="100%"
+						       mode="widthFix"
+						       src="../../../../common/img/checked.png"
+						></image>
+					</view>
+					<view class="avatarWrapper">
+						<image class="avatar"
+						       src="{{item.RelativesFileUrl||'../../../../common/img/avatar.jpg'}}"
+						       mode="widthFix"></image>
+					</view>
+					
+					<text class='memberName'>{{item.RelativesName}}</text>
+				</view>
+				<checkbox value="{{item.EID}}"
+				          checked="{{item.checked}}"
+				          id="memberCheck{{index}}"
+				/>
+			</label>
+		</block>
+	</checkbox-group>
+	<button class="mainButton"
+	        style="width: 100%;bottom: 0;left: 0;border-radius: 0;height: 100rpx;line-height: 100rpx;"
+	        bindtap="subscribe" disabled="{{isDisabled}}">确　　认
+	</button>
+</view>

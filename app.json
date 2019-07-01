@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/sq/sq",
+    "pages/qinr/qinr",
+    "pages/my/my",
+    "pages/index/index",
+    "pages/myinfo/myinfo",
+    "pages/myFamily/myFamily",
+    "pages/eachFamily/eachFamily",
+    "pages/authroize/authroize",
+    "pages/mobileVerify/mobileVerify",
+    "pages/question/question",
+    "pages/newsDetail/newsDetail",
+    "pages/activity/activity",
+    "pages/myOrder/myOrder",
+    "pages/activity/subscribeList/subscribeList",
+    "pages/activity/placeManagement/opPlace/opPlace",
+    "pages/activity/activityManagement/opActivity/opActivity",
+    "pages/activity/thisWeek/opThisWeek/opThisWeek",
+    "pages/activity/subscribeList/subscribe/subscribe",
+    "pages/activity/subscribeList/selectFamily/selectFamily",
+    "pages/activity/allActivity/allActivity"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333",
+    "custom": true,
+    "selectedColor": "#f18603",
+    "borderStyle": "black",
+    "usingComponents": {},
+    "list": [
+      {
+        "iconPath": "common/img/sq.png",
+        "selectedIconPath": "common/img/sq_s.png",
+        "pagePath": "pages/sq/sq",
+        "text":"社区"
+      },
+      {
+        "iconPath": "/common/img/qinr.png",
+        "selectedIconPath": "/common/img/qinr_s.png",
+        "pagePath": "pages/myOrder/myOrder",
+        "text": "我的活动"
+      },
+      {
+        "pagePath": "pages/activity/allActivity/allActivity",
+        "iconPath": "/common/img/qinr.png",
+        "selectedIconPath": "/common/img/qinr_s.png",
+        "text": "所有活动"
+      },
+      {
+        "iconPath": "common/img/my.png",
+        "selectedIconPath": "common/img/my_s.png",
+        "pagePath": "pages/my/my",
+        "text":"我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

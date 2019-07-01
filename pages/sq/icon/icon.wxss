@@ -1,0 +1,32 @@
+.icon{
+	background: #fff;
+	height: 100px;
+	margin: 15rpx 0;
+}
+.iconSwiper{
+	height:100%;
+	position: relative;
+}
+.swiperItem{
+	top: calc(50% - (70%/2));
+	height: 70% !important;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.slide-image{
+	width: 90rpx;
+	height: 90rpx;
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto 0;
+}
+.iconText{
+	font-size: 10pt;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	width: 100%;
+	height: auto!important;
+}
+

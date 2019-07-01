@@ -1,0 +1,41 @@
+<view style="height: 100%;background: #eee">
+	<view class="add">
+		<view style="margin-right: 50rpx" bindtap="_add">+</view>
+	</view>
+	<view class="floorsDetails">
+		<view class="placeList">
+			<block
+				wx:if="{{floor.length}}"
+				wx:for="{{floor}}"
+				wx:for-item="i"
+				wx:key="{{index}}">
+				<view class="eachFloor">
+					<block wx:for="{{floor[index]}}"
+					       wx:for-item="j"
+					       wx:for-index="index_sub"
+					       wx:key="{{j.ID}}"
+					>
+						<view class="management_list " data-index="{{index_sub}}">
+							<text class="floorTitle " wx:if="{{index_sub===0}}">{{j.FieldFloor}}</text>
+							<view class="management_list_item " data-info="{{j}}" bindtap="_editPlace">
+								<block wx:if="{{j.FieldImgUrl}}">
+									<image lazy-load="{{true}}" class="m_img"
+									       src="https://xt.shi1.cn{{j.FieldImgUrl}}"
+									       binderror="_imgError"
+									       mode="aspectFill"></image>
+								</block>
+								<block wx:else>
+									<image class="m_img" src="../../../common/img/noImg.jpg"
+									       mode="aspectFit">暂无图片
+									</image>
+								</block>
+								<text>{{j.FieldName}}</text>
+							</view>
+						</view>
+					</block>
+				</view>
+			</block>
+		</view>
+		<view class="finished">--没有更多了--</view>
+	</view>
+</view>

@@ -1,0 +1,35 @@
+@import "../../common/css/common.wxss";
+#question{
+	background: #eee;
+	position: relative;
+	height: 60rpx;
+	margin: 30rpx 0 100rpx;
+}
+#question .picker{
+	height: 100%;
+	line-height: 60rpx;
+	font-size: 30rpx;
+	padding-left: 30rpx;
+}
+#question:after{
+	content: '';
+	width: 20rpx;
+	height:20rpx;
+	border: 4rpx solid #bbb;
+	border-left:none;
+	border-top:none;
+	transform: rotate(45deg);
+	position: absolute;
+	right: 30rpx;
+	top:calc(50% - (35rpx/2));
+	font-size: 30rpx;
+	pointer-events:none;
+}
+textarea{
+	width: calc(100% - 40px);
+	padding: 0 20px;
+	height: 100% !important;
+	overflow: scroll;
+	background: #eee;
+	white-space: normal;
+}

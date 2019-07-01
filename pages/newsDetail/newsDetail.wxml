@@ -1,0 +1,10 @@
+<view class="listWrapper" style="padding-top: 5%">
+	<view id="detailTitle">
+		<text id="time">{{item.DateCreated}}</text>
+		<text id="tag">{{item.MessageTag}}</text>
+	</view>
+	<view id="content">
+		<view id="newsTitle">{{item.MessageTitle}}</view>
+		<text>{{item.MessageComment}}</text>
+	</view>
+</view>

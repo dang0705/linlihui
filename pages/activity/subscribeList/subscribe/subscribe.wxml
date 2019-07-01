@@ -1,0 +1,13 @@
+<view id="listWrapper" class="listWrapper">
+	<view id="activityTitle">
+		<text style="color:#f18603;font-size: 15pt;">{{activityTitle}}</text>
+		<text style="font-size: 10.5pt;color: #999">{{activityDate}}</text>
+	</view>
+	<view id="imgWrapper">
+		<image src="{{activityImg?imgUrl+activityImg:'../../../../common/img/noImg.jpg'}}" mode="widthFix"></image>
+	</view>
+	<scroll-view scroll-y style="height: 400rpx;margin-top: 50rpx;">
+		<text id="comments">　　{{activityComments}}</text>
+	</scroll-view>
+	<button class="subscribe" bindtap="subscribe">预　　约</button>
+</view>

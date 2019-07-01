@@ -1,0 +1,31 @@
+@import "../../common/css/common.wxss";
+#avatar image{
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+}
+
+#phone:after{
+	content: "";
+	width: 0;
+	height: 0;
+	border: none;
+}
+.picker{
+	text-align: right;
+	text-indent: 50px;
+}
+.list{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.list input[type='text'],.list input[type='number']{
+	margin-right: 50rpx;
+	text-align: right;
+	color: #999;
+}
+.list .picker{
+	color: #999;
+
+}

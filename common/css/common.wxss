@@ -1,0 +1,105 @@
+.listWrapper{
+	padding: 0 40rpx 0 ;
+	position: relative;
+	height: 100%;
+	background: #fff;
+}
+.mainBgColor{
+	background: #f18603;
+}
+.mainColor{
+	color: #f18603;
+}
+.content{
+	position: absolute;
+	right: 50rpx;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	text-align: right;
+}
+
+.IDNumber.content{
+	width: 60%;
+}
+.gender_picker.content{
+	width: 100%;
+	right: 0;
+	padding-right: 50rpx;
+}
+
+.birthday_picker,.gender_picker{
+	position: absolute;
+	top: 0;
+	right: 50rpx;
+	height: 100%;
+	width: 100%;
+}
+.list:after{
+	content: '';
+	pointer-events: none;
+	width: 20rpx;
+	height:20rpx;
+	border: 4rpx solid #bbb;
+	border-left:none;
+	border-bottom:none;
+	transform: rotate(45deg);
+	position: absolute;
+	right: 0;
+	top:calc(50% - (20rpx/2));
+	font-size: 30rpx;
+}
+
+.add{
+	position: fixed;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+	height: 100rpx;
+	line-height: 100rpx;
+	background: #fff;
+	font-size: 80rpx;
+	font-weight: bold;
+	color:#f18603 ;
+	display: flex;
+	justify-content: flex-end;
+}
+.finished{
+	text-align: center;
+	color:#f18603 ;
+	height: 30px;
+	line-height: 30px;
+	font-size: 25rpx;
+	border-top: 1px solid #eee;
+
+}
+.management_list_item{
+	display: flex;
+	justify-content: flex-start;
+	align-items:center;
+	font-size: 35rpx;
+}
+.placeList{
+	/*background: #fff;*/
+}
+.eachFloor{
+	padding: 0 40rpx;
+	background: #fff;
+}
+.management_list{
+	background: #fff;
+	border-bottom: 1px solid #ccc;
+	padding: 3% 0;
+}
+
+.m_img{
+	width: 250rpx;
+	margin-right: 50rpx;
+	height: 150rpx;
+}
+.textOverFlow{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+

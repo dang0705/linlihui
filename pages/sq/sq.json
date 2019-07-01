@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "header": "/pages/sq/header/header",
+    "banner": "/pages/sq/banner/banner",
+    "icon-area": "/pages/sq/icon/icon",
+    "hot-news": "/pages/sq/hotNews/hotNews"
+  },
+  "navigationBarBackgroundColor": "#f18603",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "江南新村邻里汇",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light"
+}

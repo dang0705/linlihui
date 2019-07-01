@@ -1,0 +1,89 @@
+@import "../../../common/css/common.wxss";
+
+.weekList, .title {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.eachFloor view:last-child{
+	border-bottom: none;
+}
+.title {
+	height: 100rpx;
+	justify-content: space-between;
+	align-items: center;
+}
+.weekListWrapper{
+	position: relative;
+}
+.weekList {
+	margin-top: 20rpx;
+	border: 1px solid #f18603;
+	border-radius: 25rpx;
+	padding: 15rpx 20rpx;
+	font-size: 35rpx;
+	position: relative;
+}
+.today{
+	border: 1px solid #f18603;
+}
+.before{
+	color: #b6b6b6;
+}
+.gotoNextWeek{
+	width: 35rpx;
+	height:35rpx;
+	border: 6rpx solid #f18603;
+	border-left:none;
+	border-bottom:none;
+	transform: rotate(45deg);
+	position: absolute;
+	right: 30rpx;
+	top:calc(50% - (35rpx/2));
+}
+
+.date{
+	margin: 10rpx 0;
+}
+.eachDay {
+	text-align: center;
+	width: 10%;
+	padding: 5rpx 0;
+	border-radius: 20rpx;
+	overflow: hidden;
+	font-size: 30rpx;
+	font-weight: bold;
+	
+}
+.activity{
+	background:#f18603;
+	color: #fff;
+}
+.activityInfo{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	font-size: 25rpx;
+}
+.smallFont{
+	width: 55%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.copy{
+	width: 40%;
+	background: #f18603;
+	z-index: 999;
+	color: #fff;
+	padding: 0;
+}
+icon{
+	margin-right: 10px;
+}
+.getPadding{
+	padding-bottom: 30px;
+}

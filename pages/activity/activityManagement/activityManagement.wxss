@@ -1,0 +1,4 @@
+@import "../../../common/css/common.wxss";
+.eachFloor view:last-child{
+	border-bottom: none;
+}

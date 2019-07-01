@@ -1,0 +1,39 @@
+<block wx:if="{{!userCancelAuthorize}}">
+	<view id="head">
+		<image
+			id="logo"
+			mode="widthFix"
+			src="../../common/img/logo.png"></image>
+	</view>
+	<button open-type="getPhoneNumber"
+	        id="getUserMobile"
+	        bindgetphonenumber="getUserMobile">微信快捷登录或注册
+	</button>
+</block>
+<block wx:else>
+	<view class="listWrapper">
+		<view>
+			<text style="font-size: 50rpx;">请输入您的手机号</text>
+		</view>
+		<view id="verifyArea">
+			<view class="list">
+				<input type="number"
+				       bindinput="acceptMobileNum"
+				       maxlength="11"
+				       value="{{mobile}}"
+				       placeholder="手机号"/>
+				<button id="send"
+				        bindtap="sendCode"
+				        disabled="{{isSendDisabled}}"
+				>{{verifyText}}</button>
+			</view>
+			<view class="list">
+				<input type="number"
+				       value="{{inputVerify}}"
+				       bindinput="acceptVerify"
+				       placeholder="验证码"/>
+			</view>
+		</view>
+		<button id="bindMobile" class="mainButton" bindtap="bindMobile">绑定</button>
+	</view>
+</block>

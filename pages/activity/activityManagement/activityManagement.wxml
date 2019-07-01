@@ -1,0 +1,41 @@
+<view style="height: 100%;background: #eee">
+	<view class="add">
+		<view style="margin-right: 50rpx" bindtap="_add">+</view>
+	</view>
+	<scroll-view
+		scroll-y
+		style="height: 89%;background: #eee;position: absolute;width: 100%;left: 0;bottom: 0;"
+		scroll-with-animaition="{{true}}"
+		bindscrolltolower="_getActivityManagement"
+	>
+		<view class="activityMDetails">
+			<view class="placeList">
+				<view class="eachFloor listWrapper">
+					<block wx:for="{{activityManagementList}}"
+					       wx:key="{{item.ID}}"
+					>
+						<view class="management_list">
+							<view class="management_list_item " data-info="{{item}}"
+							      bindtap="_editActivity">
+								<block wx:if="{{item.ImgFileUrl}}">
+									<image lazy-load="{{true}}" class="m_img"
+									       src="https://xt.shi1.cn{{item.ImgFileUrl}}"
+									       mode="aspectFill"></image>
+								</block>
+								<block wx:else>
+									<image class="m_img" src="../../../common/img/noImg.jpg"
+									       mode="aspectFit">暂无图片
+									</image>
+								</block>
+								<text>{{item.ActivityName}}</text>
+							</view>
+						</view>
+					</block>
+				</view>
+			</view>
+			<block wx:if="{{isAMDataFinished}}">
+				<view class="finished">--没有更多了--</view>
+			</block>
+		</view>
+	</scroll-view>
+</view>

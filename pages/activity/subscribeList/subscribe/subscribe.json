@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "selector": "../../../components/selector/selector"
+  },
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "活动预约",
+  "backgroundColor": "#fff",
+  "backgroundTextStyle": "light"
+}

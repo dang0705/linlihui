@@ -1,0 +1,39 @@
+<block wx:if="{{selector_mode==='selector'}}">
+	<picker class="selector"
+	        style="height: {{selectorHeight}}rpx;display: inline-block;width: 100%;"
+	        mode="{{selector_mode}}"
+	        bindchange="_bindPickerChange"
+	        range-key="{{key_name}}"
+	        value="{{list_index}}"
+	        range="{{selector_list}}">
+		<view class="picker" style="height:{{selectorHeight}}rpx">
+			{{value}}
+		</view>
+	</picker>
+</block>
+<block wx:elif="{{selector_mode==='time'}}">
+	<picker
+		style="height: {{selectorHeight}}rpx;display: inline-block;width: 100%;"
+		mode="{{selector_mode}}"
+		value="{{time}}"
+		start="{{timeStart}}"
+		end="{{timeEnd}}"
+		bindchange="_bindTimeChange">
+		<view class="picker" style="height:{{selectorHeight}}rpx">
+			{{time}}
+		</view>
+	</picker>
+</block>
+<block wx:elif="{{selector_mode==='multiSelector'}}">
+	<picker class="selector"
+	        style="height: {{selectorHeight}}rpx;display: inline-block;width: 100%;"
+	        mode="{{selector_mode}}"
+	        bindchange="_bindPickerChange"
+	        range-key="{{key_name}}"
+	        value="{{list_index}}"
+	        range="{{selector_list}}">
+		<view class="picker" style="height:{{selectorHeight}}rpx">
+			{{value}}
+		</view>
+	</picker>
+</block>

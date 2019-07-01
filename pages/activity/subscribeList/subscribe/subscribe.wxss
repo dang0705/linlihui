@@ -1,0 +1,79 @@
+@import "../../../../common/css/common.wxss";
+
+#imgWrapper {
+	width: 100%;
+
+}
+#imgWrapper image{
+	width: 100%;
+}
+#activityTitle{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 35rpx;
+	margin:50rpx 0 70rpx;
+}
+.subscribe{
+	position: fixed;
+	width: 100%;
+	height: 100rpx;
+	border-radius: 0;
+	left: 0;
+	bottom: 0;
+	background:#f18603 ;
+	color: #fff;
+	z-index: 999;
+}
+.avatar{
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+	display: block;
+}
+#familyList{
+	border-radius:0 20rpx 0 0;
+	position: absolute;
+	width: 200rpx;
+    height: 800rpx;
+	left: -260rpx;
+	top: 5%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    z-index: 9999;
+    padding:0 30rpx;
+    color: #fff;
+    background:rgba(0,0,0,0.4);
+	transition: all 0.6s;
+}
+.familyItem{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin: 25rpx 0;
+}
+.memberName{
+  width: 60%;
+
+}
+#showFamily{
+	border-radius: 0 10rpx 10rpx 0;
+	width: 80rpx;
+	text-align: center;
+	height: 220rpx;
+	line-height: 50rpx;
+	padding: 10rpx;
+	color: #fff;
+	background:#f18603;
+	writing-mode:lr-tb;
+	position: absolute;
+	right: -80rpx;
+	bottom: 22%;
+	z-index: 99999;
+	opacity:.65
+}
+#comments{
+	font-size: 12pt;
+}
+

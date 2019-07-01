@@ -1,0 +1,84 @@
+<view class="listWrapper">
+	<view id="my_avatar" class="list" wx:if="{{hasUserInfo}}">
+		<text>头像</text>
+		<view class="avatar">
+			<open-data type="userAvatarUrl"></open-data>
+		</view>
+		<!--<image class="avatar content" src="{{avatar}}" mode="cover"></image>-->
+	</view>
+	<view id="my_nickName" class="list">
+		<text>真实姓名</text>
+		<input type="text"
+		       style="text-align: right"
+		       value="{{name}}"
+		       maxlength="6"
+		       bindinput="acceptNameInput"/>
+	</view>
+	<view id="gender" class="list">
+		<text>性别</text>
+		<picker
+			class="gender_picker content"
+			bindchange="bindGenderChange"
+			value="{{mygenderIndex}}"
+			range="{{mygender}}">
+			<view class="picker ">
+				{{mygender[mygenderIndex]}}
+			</view>
+		</picker>
+	</view>
+	<view id="birthday" class="list">
+		<text>生日</text>
+		<picker class="birthday_picker content" mode="date" value="{{birthday}}" start="1900-01-01" end="2019-09-01"
+		        bindchange="bindDateChange">
+			<view class="picker">
+				{{birthday}}
+			</view>
+		</picker>
+	</view>
+	<view id="idCode" class="list">
+		<text>身份证号码</text>
+		<input type="text" maxlength="18" value="{{idCode}}" bindinput="acceptIDInput"/>
+	</view>
+	<view id="phone" class="list">
+		<text>手机号</text>
+		<input type="number"
+		       maxlength="11"
+		       bindinput="acceptMobileNum"
+		       value="{{mobile}}"/>
+	</view>
+	<block wx:if="{{isFocus}}">
+		<view class="list" id="verifyList">
+			<input type="number"
+			       placeholder="请输入验证码"
+			       bindinput="acceptVerify"
+			       id="verify"
+			       value="{{inputVerify}}"/>
+			<button disabled="{{isSendDisabled}}"
+			        id="sendCode"
+			        bindtap="sendCode">{{verifyText}}
+			</button>
+			<!--<button id="saveMobile" bindtap="bindMobile">保存手机号</button>-->
+		</view>
+	
+	</block>
+	<view id="face" class="list" bindtap="openCamera">
+		<text>人脸识别</text>
+	</view>
+	
+	<block wx:if="{{imgUrl}}">
+		<text style="color:green;text-decoration: underline;" bindtap="showImg">人脸识别已认证通过</text>
+	</block>
+	<block wx:else>
+		<text>请上传人脸后,点击保存后识别</text>
+	</block>
+	
+	<block wx:if="{{isImgShow}}">
+		<view style="height: 100%;width: 100%;position: absolute;left: 0;top: 0;background: rgba(0,0,0,.6);z-index: 10;"
+		      bindtap="hideImg">
+			<image style="width: 70%;position: absolute;left: calc(50% - (70%/2));top: 20%;z-index: 2"
+			       src="{{imgUrl}}"
+			       mode="aspectFit"></image>
+		</view>
+	</block>
+	<button bindtap="saveMyInfo" class="mainButton">保存</button>
+</view>

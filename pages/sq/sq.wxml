@@ -1,0 +1,16 @@
+<scroll-view scroll-y
+             style="height:{{height}}"
+             bindscrolltoupper="upper"
+             bindscrolltolower="getNotice"
+             scroll-with-animiation="{{true}}"
+             data-more="more"
+             bindscroll="scroll"
+             scroll-into-view="{{toView}}"
+             scroll-top="{{scrollTop}}">
+	<!--<header></header>-->
+	<banner id="banner" data-from-sq="1"></banner>
+	<icon-area id="icon_area" dataFromSq="{{iconList}}"></icon-area>
+	<hot-news id="hotNews" dataFromSq="{{sendNewsArr}}"></hot-news>
+	<view wx:if="{{isDataFinished}}" class="finished">--没有更多了--</view>
+
+</scroll-view>

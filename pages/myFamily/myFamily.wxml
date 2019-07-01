@@ -1,0 +1,35 @@
+<view class="listWrapper">
+	<view id="add">
+		<input type="number"
+		       bindinput="mobileInput"
+		       maxlength="11"
+		       placeholder="您要添加的亲人手机号"
+		       value="{{mobileNumber}}"/>
+		<button
+			bindtap="check"
+		>+ 添加
+		</button>
+	</view>
+	<view wx:for="{{family}}"
+	      wx:key="{{item.ID}}"
+	      data-id="{{item.ID}}"
+	      data-mobile="{{item.RelativesCode}}"
+	      data-call="{{item.RelativesName}}"
+	      data-avatar="{{item.RelativesFileUrl}}"
+	      class="list"
+	      bindtap="editFamily"
+	      bindtouchstart="touchFamilyStart"
+	      bindtouchend="touchFamilyEnd"
+	>
+		<image class="avatar"
+		       src="{{item.RelativesFileUrl||'../../common/img/avatar.jpg'}}"
+		       mode="cover"></image>
+		<text>{{item.RelativesName}}</text>
+	</view>
+	
+	
+	<!--	<view wx:if="{{isShowCheckInput}}">
+			
+			<button bindtap="check">尝试绑定</button>
+		</view>-->
+</view>

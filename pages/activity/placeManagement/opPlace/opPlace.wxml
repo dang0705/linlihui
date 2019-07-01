@@ -1,0 +1,24 @@
+<view class="listWrapper">
+	<view class="list" id="title">
+		<text>标题</text>
+		<input type="text" placeholder="请输入标题" value="{{title}}" bindinput="titleInput" focus="{{isFocus}}" id="placeTitle"/>
+	</view>
+	<view class="list" id="uploadImgWrapper">
+		<upload-img
+			fileName="opPlace"
+			bind:url="getUrl"
+			bind:showImg="showImg"
+		></upload-img>
+		<image wx:if="{{showImgUrl}}" src="{{showImgUrl}}" mode="aspectFill" style="width: 200rpx;height: 200rpx;"></image>
+	</view>
+	<view class="list" id="place" style="display: flex;align-items: center">
+		<text>场地</text>
+		<selector
+			list="{{list}}"
+			value="{{selectorValue}}"
+			style="width: 80%;display: inline-block"
+			bind:selectorValue="getValue"
+		></selector>
+	</view>
+	<button class="mainButton" bindtap="save" disabled="{{isDisabled}}">保存</button>
+</view>

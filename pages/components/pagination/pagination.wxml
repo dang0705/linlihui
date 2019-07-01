@@ -1,0 +1,58 @@
+<view class="pagination">
+	<block wx:if="{{isScroll}}">
+		<scroll-view
+			scroll-y
+			style="height: 80%;"
+			enable-back-to-top
+			lower-threshold="100"
+			bindscrolltolower="_getPagination"
+		>
+			<block wx:for="{{paginationList}}"
+			       wx:key="{{index}}"
+			>
+				<view
+					class="list_item_wrapper"
+					bindtap="_itemTap"
+					data-item="{{item}}"
+				>
+					<image class="m_img"
+					       src="{{item[imgKey]||imgDefault}}"
+					       mode="scaleToFill">
+					</image>
+					<view class="infoWrapper"
+					>
+						<view style="font-size: 11pt;">{{item[MessageTitle]}}</view>
+						<view class="activityInfo">
+							<text>{{item[MessageTag]}}</text>
+							<text>{{item[DateCreated]}}</text>
+						</view>
+					</view>
+				</view>
+			</block>
+		</scroll-view>
+	</block>
+	<block wx:else>
+		<block wx:for="{{paginationList}}"
+		       wx:key="{{index}}"
+		>
+			<view
+				class="list_item_wrapper"
+				bindtap="_itemTap"
+				data-item="{{item}}"
+			>
+				<image class="m_img"
+				       src="{{item[imgKey]||imgDefault}}"
+				       mode="scaleToFill">
+				</image>
+				<view class="infoWrapper"
+				>
+					<view style="font-size: 11pt;">{{item[MessageTitle]}}</view>
+					<view class="activityInfo">
+						<text>{{item[MessageTag]}}</text>
+						<text>{{item[DateCreated]}}</text>
+					</view>
+				</view>
+			</view>
+		</block>
+	</block>
+</view>

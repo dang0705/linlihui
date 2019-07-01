@@ -1,0 +1,45 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  /*background: #eee;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+page{
+  overflow-y: hidden;
+  height: 100%;
+}
+
+.mainButton{
+  width: 530rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 50rpx;
+  background: #f18603;
+  color: #fff;
+  position: absolute;
+  bottom:100rpx;
+  text-align: center;
+  left: calc(50% - (530rpx/2));
+}
+.pages{
+  font-weight: 600;
+}
+.list{
+  border-bottom: 1rpx solid #f4f4f4;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  position: relative;
+}
+input.content{
+  display: inline;
+  line-height: 80rpx;
+  height: 100%;
+  width: 100%;
+}
+

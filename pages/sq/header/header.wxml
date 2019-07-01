@@ -1,0 +1,4 @@
+<view  class="header mainColor">
+	<text>江南新村</text>
+	<!--<input id="search" type="text" />-->
+</view>

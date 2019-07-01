@@ -1,0 +1,53 @@
+@import "../../../common/css/common.wxss";
+
+.listWrapper {
+	height: auto;
+}
+.list_item_wrapper{
+	height: 75px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 0;
+	border-bottom: 1px solid #f4f4f4;
+	
+}
+
+.newsWrapper view:last-child {
+	border-bottom: none;
+}
+
+.news {
+	border-bottom: 1px solid #f4f4f4;
+}
+
+.newsTitle {
+	display: flex;
+	justify-content: space-between;
+	vertical-align: sub;
+	align-items: center;
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 11pt;
+}
+
+.activityInfo {
+	width: 100%;
+	font-size: 8pt;
+	display: flex;
+	justify-content: space-between;
+}
+.m_img{
+	width: 133px!important;
+	height:100%!important;
+	margin: 0;
+}
+.infoWrapper{
+	width: 50%;
+	height: 100%;
+	padding-left: 10%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+

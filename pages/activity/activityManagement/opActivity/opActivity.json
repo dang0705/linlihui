@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "upload-img": "/pages/components/uploadImg/uploadImg"
+  },
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "新增/编辑活动",
+  "backgroundColor": "#fff",
+  "backgroundTextStyle": "light"
+}

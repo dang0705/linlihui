@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "this-week": "/pages/activity/thisWeek/thisWeek",
+    "activity-management": "/pages/activity/activityManagement/activityManagement",
+    "place-management": "/pages/activity/placeManagement/placeManagement"
+  },
+  "disableScroll": true,
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "活动发布",
+  "backgroundColor": "#fff",
+  "backgroundTextStyle": "light"
+}

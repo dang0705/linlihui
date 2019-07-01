@@ -1,0 +1,9 @@
+<view style="height: {{size}}rpx;overflow: hidden">
+	<image
+		   style="height: {{size}}rpx;width:{{size}}rpx;overflow: hidden"
+		   id="uploadImg"
+	       src="../../../common/img/upload.jpg"
+	       bindtap="_uploadImg"
+	       mode="scaleToFill">
+	</image>
+</view>

@@ -1,0 +1,29 @@
+@import "../../../common/css/common.wxss";
+
+.floorsDetails{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	height: 89%;
+}
+.eachFloor{
+	margin-bottom: 20rpx;
+}
+.placeList view:last-child{
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+.floorTitle{
+	font-size: 45rpx;
+	text-align: center;
+	padding-bottom: 3%;
+	margin-bottom: 3%;
+	font-weight: bold;
+	display: block;
+	border-bottom: 1px solid #ccc;
+}
+
+
+

@@ -1,0 +1,6 @@
+<switch
+	checked="{{checkStatus||false}}"
+	disabled="{{disabledStatus||false}}"
+	type="{{typeStatus||'switch'}}"
+	color="{{colorStatus||'#f18603'}}"
+	bindchange="_switchChange"/>

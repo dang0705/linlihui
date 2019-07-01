@@ -1,0 +1,120 @@
+@import "../../common/css/common.wxss";
+image{
+	width: auto;
+	height: auto;
+}
+#family{
+	margin-bottom: 10px;
+	background: #fff;
+	padding: 0 20px;
+}
+.list:after{
+	border: none;
+}
+.familyList{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.familyAvatar{
+	width: 25%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.familyAvatar image{
+	width: calc(100rpx*.85);
+	border: 1px solid #000;
+	height: 85%;
+	overflow: hidden;
+	border-radius: 50%;
+}
+.name{
+	width: 20%;
+}
+.place{
+	width: 40%;
+	font-size: 10.5pt;
+	color: #999;
+
+}
+.icon{
+	width: 15%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+.title{
+	height: 60px;
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+.myOrderList{
+	width: 90%;
+	margin:0 auto;
+	border-left: 1px solid #999;
+	padding-top: 35px;
+}
+.everyDaysOrder{
+	box-sizing: border-box;
+	position: relative;
+	padding:0 0 50rpx 60px;
+}
+
+.eachTimeOrder{
+	padding-bottom:  30px;
+	border-bottom: 1px solid #ccc;
+
+}
+.timeAndPlace{
+	height: 55px;
+	padding-top: 15px;
+}
+.timeAndPlace view{
+	display: inline-block;
+	font-size:12.5pt ;
+	vertical-align: middle;
+}
+.orderTime{
+	width: 30%;
+}
+.timeAndPlace view:last-child{
+	width: 50%;
+}
+.orderDate,.members{
+	font-size: 11.5pt;
+	color: #999;
+	width: 30%;
+	position: relative;
+}
+.orderDate:before{
+	content: '';
+	background: #fff;
+	width: 15px;
+	height: 15px;
+	border: 1px solid #999;
+	border-radius: 50%;
+	position: absolute;
+	left: -38px;
+	top: 2px;
+	box-sizing: border-box;
+}
+.activityName{
+	width: 50%;
+	font-size: 15pt;
+	color: #333;
+	text-align: right;
+	font-weight: bold;
+}
+.activityDetails{
+	display: flex;
+	justify-content: flex-start;
+	align-items: start;
+}
+.camera{
+	width: 100%;
+	height: 50%;
+}

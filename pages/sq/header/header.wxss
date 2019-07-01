@@ -1,0 +1,27 @@
+@import "../../../common/css/common.wxss";
+.header{
+	background: #000;
+	height: 90rpx;
+	line-height: 90rpx;
+	padding:0 50rpx 0;
+	display: flex;
+	flex-flow:  row nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+text{
+	height: 100%;
+}
+/*
+#search{
+	width: 300rpx;
+	height: 45rpx;
+	border: 1px solid #f18603;
+	border-radius: 30rpx;
+	vertical-align: sub;
+	margin-left: 100prx;
+	min-height: auto;
+	padding-left: 50rpx;
+}
+*/

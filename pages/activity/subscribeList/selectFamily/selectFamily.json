@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#f18603",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "请选择预约人",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light"
+}

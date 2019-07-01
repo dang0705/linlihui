@@ -1,0 +1,43 @@
+<view class="listWrapper">
+	<view class="newsTitle">
+		<text>公告资讯</text>
+	</view>
+<!--	<pagination
+		postUrl="QueryNotice"
+		list="{{dataFromSq}}"
+		postData="{{postData}}"
+		imgDefault="../../../common/img/lb.png"
+		MessageTitle="MessageTitle"
+		MessageTag="MessageTag"
+		DateCreated="DateCreated"
+		isScroll="{{false}}"
+	></pagination>-->
+	<view class="newsWrapper ">
+		<view wx:for="{{dataFromSq}}"
+		      wx:key="{{index}}"
+		      class="news "
+		      bindtap="_newsDetail"
+		      data-item="{{item}}"
+		>
+			<view class="management_list">
+				<view class="management_list_item" style="height:75px;">
+					<image class="m_img"
+					       src="../../../common/img/lb.png"
+					       mode="scaleToFill">
+					</image>
+					<view class="infoWrapper"
+					>
+						<view style="font-size: 11pt;">{{item.MessageTitle}}</view>
+						
+						<view
+							class="activityInfo"
+						>
+							<text>{{item.MessageTag}}</text>
+							<text>{{item.DateCreated}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

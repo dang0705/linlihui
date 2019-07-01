@@ -1,0 +1,67 @@
+<view class="listWrapper">
+	<view id="avatar" class="list" wx:if="{{isAvatarShow}}">
+		<text>头像</text>
+		<image src="{{familyInfo.avatar}}" class="content" alt=""></image>
+	</view>
+	<view id="nickname" class="list">
+		<text>称谓</text>
+		<input type="text" bindinput="callInput" value="{{call}}"/>
+		<!--<text >麻麻</text>-->
+	</view>
+	<view id="name" class="list">
+		<text>姓名</text>
+		<input type="text"  bindinput="nameInput" value="{{familyInfo.name}}"/>
+	</view>
+	<view id="gender" class="list">
+		<text>性别</text>
+			<picker
+				id="gender"
+				class="gender_picker content"
+				bindchange="bindGenderChange"
+				value="{{genderIndex}}"
+				range="{{gender}}">
+				<view class="picker ">
+					{{gender[genderIndex]}}
+				</view>
+			</picker>
+	</view>
+	<view id="birthday" class="list">
+		<text>生日</text>
+		<picker class="birthday_picker" mode="date" value="{{birthday}}" start="1900-01-01" end="2100-01-01"
+		        bindchange="bindDateChange">
+			<view class="picker ">
+				{{birthday}}
+			</view>
+		</picker>
+	</view>
+	<view id="idCode" class="list">
+		<text>身份证号码</text>
+		<input type="text"
+		       class="IDNumber"
+		       bindinput="IDNumberInput"
+		       value="{{familyInfo.IDNumber}}"/>
+	</view>
+	<view id="phone" class="list">
+		<text>手机号</text>
+		<input id="tel" type="number" disabled="{{true}}"  maxlength="11"
+		       bindinput="mobileInput" value="{{familyInfo.mobile}}"/>
+	</view>
+	<view id="face" class="list" bindtap="openCamera">
+		<text>人脸识别</text>
+	</view>
+	<block wx:if="{{familyInfo.face}}">
+		<text style="color:green;text-decoration: underline;" bindtap="showImg">人脸识别已认证通过</text>
+	</block>
+	<block wx:else>
+		<text>请上传人脸后,点击保存后识别</text>
+	</block>
+	<block wx:if="{{isImgShow}}">
+		<view style="height: 100%;width: 100%;position: absolute;left: 0;top: 0;background: rgba(0,0,0,.6);z-index: 10;"
+		      bindtap="hideImg">
+			<image style="width: 70%;position: absolute;left: calc(50% - (70%/2));top: 20%;z-index: 2"
+			       src="{{familyInfo.face}}"
+			       mode="aspectFit"></image>
+		</view>
+	</block>
+	<button class="mainButton" disabled="{{isDisabled}}" bindtap="saveMyEachFamily">保存</button>
+</view>

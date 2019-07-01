@@ -1,0 +1,19 @@
+<view class="icon">
+	<swiper indicator-dots="{{indicatorDots}}"
+	        class="iconSwiper"
+	        indicator-active-color="{{indicatorActiveColor}}"
+	        display-multiple-items="{{displayMultipleItems}}"
+	        autoplay="{{autoplay}}"
+	        interval="{{interval}}"
+	        duration="{{duration}}">
+		<block wx:for="{{dataFromSq}}" wx:for-index="index" wx:key="{{index}}">
+			<swiper-item class="swiperItem"
+			             data-value="{{item.Value}}"
+			             bindtap="_navigateTo"
+			             id="navigate_{{index}}">
+				<image src="{{item.ImageUrl}}" class="slide-image" mode="scaleToFill"/>
+				<text class="iconText">{{item.Name}}</text>
+			</swiper-item>
+		</block>
+	</swiper>
+</view>

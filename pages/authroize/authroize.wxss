@@ -1,0 +1,50 @@
+@import "../../common/css/common.wxss";
+#head{
+	height: 300rpx;
+	background: #f18603;
+	position: relative;
+}
+#logo{
+	position: absolute;
+	bottom: 90rpx;
+	left:calc(50% - (450rpx/2));
+	width: 450rpx;
+}
+
+#getUserMobile{
+	background: #fff;
+	width: 530rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	border: 1px solid #7dd43b;
+	margin: 600rpx auto 0;
+	border-radius: 50rpx;
+}
+#bindMobile{
+	border: none;
+}
+#verifyArea{
+	margin-top: 150rpx;
+}
+.list:after{
+	content: '';
+	border: none;
+	
+}
+input{
+	width: 300rpx;
+	height: 80rpx;
+	position: absolute;
+	left: 0;
+	top: calc(50% - (80rpx/2));
+}
+#send{
+	position: absolute;
+	background: #f18603;
+	font-size: 25rpx;
+	/*width: 200rpx;*/
+	top: 0;
+	right: 0;
+	color: #fff;
+}
+

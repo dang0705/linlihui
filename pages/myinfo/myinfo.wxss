@@ -1,0 +1,75 @@
+@import "../../common/css/common.wxss";
+
+#my_avatar:after,#verifyList:after {
+	content: '';
+	border: none;
+}
+
+.avatar {
+	width: 65rpx;
+	height: 65rpx;
+	border-radius: 50%;
+	vertical-align: middle;
+	overflow: hidden;
+	position: absolute;
+	right: 50rpx;
+	top: calc(50% - (65rpx / 2));
+}
+
+#idCode>input{
+	width: 350rpx;
+}
+#verifyList{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#sendCode {
+	width: 40%;
+	height: 60%;
+	line-height: 60rpx;
+	background:green;
+	font-size: 20rpx;
+	color: #fff;
+	border-radius: 40rpx;
+}
+
+#saveMobile {
+	right: 50rpx;
+	background: #f18603
+}
+
+#nickName {
+	position: absolute;
+	right: 50rpx;
+	top: 0;
+}
+
+#verify {
+	left: 0 !important;
+	width: 60%;
+	height: 100%;
+	text-align: left;
+}
+
+.list{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.list input[type='text'],.list input[type='number']{
+	margin-right: 50rpx;
+	text-align: right;
+	color: #999;
+}
+.list .picker{
+	color: #999;
+	
+}
+#cameraArea {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+}

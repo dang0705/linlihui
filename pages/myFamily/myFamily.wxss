@@ -1,0 +1,39 @@
+@import "../../common/css/common.wxss";
+#add{
+	width: 100%;
+	height: 80rpx;
+	line-height: 80rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid #eee;
+	padding: 20rpx 0;
+}
+#add input{
+	border: 1px solid #f18603;
+	box-sizing: border-box;
+	border-right: none;
+	height: 100%;
+	font-size: 25rpx;
+	width: 60%;
+	text-align: center;
+	border-radius: 20rpx 0 0 20rpx;
+}
+#add button{
+	font-size: 12pt;
+	border-radius:  0 20rpx 20rpx 0;
+	background: #f18603;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	line-height: 80rpx;
+	width: 20%;
+}
+.avatar {
+	width: 65rpx;
+	height: 65rpx;
+	border-radius: 50%;
+	vertical-align: middle;
+	margin-right: 30rpx;
+}

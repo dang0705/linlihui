@@ -1,0 +1,69 @@
+@import"../../common/css/common.wxss";
+#head{
+	height: 300rpx;
+	background: #f18603;
+	padding-left: 50rpx;
+}
+
+#logout{
+	bottom: 110px;
+
+}
+
+#mobileIcon{
+	width: 30rpx;
+	margin-right: 30rpx;
+}
+.userinfo-avatar,.phone{
+	display: inline-block;
+}
+.phone{
+	vertical-align: top;
+	margin-left: 50rpx;
+	font-size: 30rpx;
+	line-height: 150rpx;
+	color:#fff;
+	position: absolute;
+	top: 100rpx;
+	left: 180rpx;
+}
+#getUserInfo,.userinfo-avatar {
+	overflow: hidden;
+	width: 150rpx;
+	height: 150rpx;
+	border-radius: 50%;
+	position: absolute;
+	left: 50prx;
+	top:50rpx;
+	font-size: 20rpx;
+	line-height: 150rpx;
+	padding: 0;
+}
+.userinfo-nickName,#bindPhoneBtn{
+	color: #fff;
+	position: absolute;
+	top: 60rpx;
+	left: 230rpx;
+}
+#bindPhoneBtn{
+	top: 100rpx;
+	
+}
+.listWrapper navigator:last-child{
+	border: none;
+}
+navigator{
+	display: flex;
+	align-items: center;
+	font-weight: normal;
+	color:#666
+}
+.icon{
+	width: 50rpx;
+	height: 50rpx;
+	margin-right: 30rpx;
+}
+.navigator-hover{
+	background: transparent;
+	opacity: 1;
+}

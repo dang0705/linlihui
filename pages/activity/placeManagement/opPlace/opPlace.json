@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "upload-img": "/pages/components/uploadImg/uploadImg",
+    "selector": "/pages/components/selector/selector"
+  },
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "新增/编辑场地",
+  "backgroundColor": "#fff",
+  "backgroundTextStyle": "light"
+}

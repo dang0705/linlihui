@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#f18603",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的预约记录",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light"
+}

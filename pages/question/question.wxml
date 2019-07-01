@@ -1,0 +1,40 @@
+<view class="listWrapper">
+	<text style="margin-bottom: 50rpx;">问题类型</text>
+	<picker id="question"
+	        mode="selector"
+	        bindchange="bindPickerChange"
+	        range-key="Name"
+	        value="{{questionIndex}}"
+	        range="{{questionArr}}">
+		<view class="picker">
+			{{questionArr[questionIndex].Name}}
+		</view>
+	</picker>
+	<view style="position: relative;margin-bottom: 20px;">
+		<text>描述</text>
+		<view style="position: absolute;right: 0;top: 0;font-size: 10.5pt; color: #999;">
+			还可以输入{{200-textAreaLength}}个字
+		</view>
+		<view style="line-height: 30px;height: 40vh;margin-top: 25px;">
+			<textarea
+				bindinput="bindTextAreaBlur"
+				maxlength="150"
+				bindtap="getFocus"
+				bindblur="textAreaBlur"
+				focus="{{textAreaFocus}}"
+				auto-height
+				placeholder=""
+				value="{{textAreaValue}}"/>
+		</view>
+	</view>
+	
+	<view>
+		<text> 联系电话:</text>
+	</view>
+	<view style="display: flex;justify-content: space-between">
+		<text style="color: #f18603;text-decoration: underline" bindtap="makePhoneCall" data-mobile="{{mobile1}}">{{mobile1}}</text>
+		<text style="color: #f18603;text-decoration: underline" bindtap="makePhoneCall" data-mobile="{{mobile2}}">{{mobile2}}</text>
+	</view>
+	<button class="mainButton" bindtap="submit">提交</button>
+	
+</view>
