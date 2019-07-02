@@ -1,0 +1,34 @@
+@import "../../common/css/common.wxss";
+
+.echartsWrapper {
+	margin: 0 auto;
+	padding: 0 20px;
+	background: #fff;
+	height: calc(100% - 100rpx - 10px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.echarts {
+	height: 35vh;
+}
+
+#title:after {
+	border: none;
+}
+
+.min {
+	text-align: center;
+	font-size: 10pt;
+	color: #f18603;
+	margin-top: -15px;
+}
+
+.noData {
+	color: #f18603;
+	font-size: 10pt;
+	text-align: center;
+	position: relative;
+	top: -100px;
+}

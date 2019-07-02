@@ -44,29 +44,43 @@ Page({
 		const
 			that = this,
 			sub = () => {
-			this.setData({
-				isDisabled: true
-			});
-			myTools.ajax('OpActivityEmployee', {
-				OpType: 'Add',
-				ActivityEmployeeID: selected,
-				EmployeeId: this.data.myID,
-				ActivityID: this.data.activityId
-			}).then(res => {
-				console.log(res);
-				if ( res.status === 1 ) {
-					wx.switchTab({
-						url: '/pages/myOrder/myOrder'
-					})
+				this.setData({
+					isDisabled: true
+				});
+				myTools.ajax('OpActivityEmployee', {
+					OpType: 'Add',
+					ActivityEmployeeID: selected,
+					EmployeeId: this.data.myID,
+					ActivityID: this.data.activityId
+				}).then(res => {
+					console.log(res);
+					if ( res.status === 1 ) {
+						wx.showToast({
+							title: '预约成功',
+							icon: 'none',
+							success() {
+								setTimeout(function () {
+									/*wx.navigateTo({
+										url: '/pages/myOrder/myOrder'
+									})*/
+									wx.navigateBack({
+										delta:2
+									})
+								},2000)
 
-				}else {
-					that.setData({
-						isDisabled: false
 
-					})
-				}
-			})
-		};
+							}
+
+						})
+
+					} else {
+						that.setData({
+							isDisabled: false
+
+						})
+					}
+				})
+			};
 		if ( this.data.selected === this.data.myID ) {
 			wx.showModal({
 				title: '预约提示',

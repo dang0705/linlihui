@@ -46,7 +46,7 @@ Component({
 			type: String,
 			value: '',
 			observer(newVal, oldVal) {
-				console.log(newVal, oldVal);
+				console.log(newVal);
 				this.setData({
 					value: newVal
 				});
@@ -133,13 +133,13 @@ Component({
 			}
 
 		},
-
 		_bindPickerChange(e) {
 			console.log(e);
 			console.log(this.data.selector_list);
 			let index = e.detail.value,
-				id = this.data.selector_list[ index ].ID;
-			console.log(id);
+				id = this.data.selector_list[ index ].ID,
+			    EID=this.data.selector_list[ index ].EID?this.data.selector_list[ index ].EID:'';
+			console.log(EID);
 			this.setData({
 				list_index: index,
 				value: this.data.selector_list[ index ][ this.data.key_name ]
@@ -147,7 +147,8 @@ Component({
 			this.triggerEvent('selectorValue',
 				{
 					value: this.data.value,
-					ID: id
+					ID: id,
+					EID:EID
 				});
 			console.log(this.data);
 		},

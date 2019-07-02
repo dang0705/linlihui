@@ -1,0 +1,39 @@
+<view style="height: 100%;background: #eee">
+	<view style="padding: 0 20px 0;background: #fff;margin-bottom: 10px;">
+		<view class="list">
+			<text>选择您的家人</text>
+			<selector class="content"
+				list="{{familyList}}"
+				key="RelativesName"
+			          bind:selectorValue="getFamilyEID"
+			></selector>
+		</view>
+	</view>
+	<view class="echartsWrapper">
+		<view>
+			<view class="list" id="title">
+				<text style="color:#f18603;">活动轨迹</text>
+			</view>
+			<view  wx:if="{{echartList.length}}" style="display: flex;align-items: center;height: 40px;color: #999">
+				<text style="font-size: 9pt;">以下图表横向轴表示时间，纵向轴表示位置信息。</text>
+			</view>
+				<view class="echarts" style="opacity:{{echartList.length?'1;':'0;'}}">
+					<ec-canvas style="width:100%;margin:0 auto;height: 100%" id="mychart-dom-bar"
+					           canvas-id="mychart-bar"
+					           ec="{{ ec }}"></ec-canvas>
+				</view>
+			    <view wx:if="{{!echartList.length}}"
+			          class="noData"
+			         >暂无数据或未选择家人</view>
+			
+			<view wx:if="{{echartList.length}}"
+			      class="min"
+			      >
+				<text>(分钟)</text>
+			</view>
+		</view>
+		<view style="margin-bottom: 5px;">
+			<image mode="widthFix" src="../../common/img/healty.png" style="width: 100%;"></image>
+		</view>
+	</view>
+</view>

@@ -1,6 +1,6 @@
 <block wx:if="{{selector_mode==='selector'}}">
 	<picker class="selector"
-	        style="height: {{selectorHeight}}rpx;display: inline-block;width: 100%;"
+	        style="height: {{selectorHeight}}rpx;display: inline-block;width: 100%;position: absolute;left: 0;top: 0;"
 	        mode="{{selector_mode}}"
 	        bindchange="_bindPickerChange"
 	        range-key="{{key_name}}"

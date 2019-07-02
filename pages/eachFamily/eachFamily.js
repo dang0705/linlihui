@@ -17,7 +17,7 @@ Page({
 		mobile: '',
 		isImgShow: false,
 		imgUrl: '',
-		isDisabled:false,
+		isDisabled: false,
 	},
 	/*显示图片*/
 	showImg() {
@@ -61,11 +61,13 @@ Page({
 	/*唤起摄像头*/
 	openCamera() {
 		let that = this;
-		myTools.uploadImg(that,this.data.mobile,'','')
+		myTools.uploadFile(that, this.data.mobile, '', '','relatives')
 			.then(res => {
 				if ( res.status === 1 ) {
 					that.setData({
-						photoUploaded: true
+						photoUploaded: true,
+						imgUrl:app.globalData.imgUrl+res.content,
+						imgRealUrl:res.content
 					});
 					wx.showToast({
 						title: '照片上传成功',
@@ -96,7 +98,7 @@ Page({
 			})
 		} else {
 			that.setData({
-				isDisabled:true,
+				isDisabled: true,
 			});
 			console.log(this.data.genderIndex);
 			myTools.ajax('OpRelatives', {
@@ -117,6 +119,7 @@ Page({
 						CardNo: that.data.familyInfo.IDNumber,
 						RealName: that.data.familyInfo.name,
 						DateOfBirth: that.data.birthday,
+						Facefile:that.data.imgRealUrl,
 						Sex: that.data.genderIndex == 0 ? '男' : '女'
 					}).then(res => {
 						console.log(res);
@@ -172,7 +175,7 @@ Page({
 				birthday: options.birthday || this.data.birthday,
 				isAvatarShow: false,
 				canIEdit: true,
-				mobile: options.mobile
+				imgUrl:options.face
 			})
 		} else {
 			if ( options.call ) {
@@ -181,7 +184,6 @@ Page({
 					genderIndex: options.genderIndex || options.gender,
 					birthday: options.birthday || this.data.birthday,
 					type: options.type,
-
 				});
 			} else {
 				this.setData({
@@ -191,7 +193,9 @@ Page({
 				})
 			}
 		}
-
+		this.setData({
+			mobile: options.mobile
+		})
 
 		// this.data.familyInfo.gender==='男'?this.setData({genderIndex:1}):this.setData({genderIndex:0});
 		console.log(this.data);

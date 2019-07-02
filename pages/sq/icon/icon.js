@@ -54,6 +54,9 @@ Component({
 			else if( e.currentTarget.dataset.value === '5'){
 				myTools.unLogin('/pages/activity/activity', '', '')
 			}
+			else if(e.currentTarget.dataset.value==='6'){
+				myTools.unLogin('/pages/familyInfo/familyInfo', '', '')
+			}
 			else {
 				wx.showToast({
 					title: '敬请期待',

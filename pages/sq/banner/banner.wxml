@@ -1,4 +1,4 @@
-<view style="background: #000">
+<view>
 	<swiper indicator-dots="{{indicatorDots}}"
 	        indicator-active-color="{{indicatorActiveColor}}"
 	        autoplay="{{autoplay}}"
@@ -7,7 +7,7 @@
 	        duration="{{duration}}">
 		<block wx:for="{{imgUrls}}" wx:key="{{index}}">
 			<swiper-item>
-				<image src="{{item}}"  class="slide-image"  mode="aspectFit"/>
+				<image src="{{item.ImageUrl}}"  class="slide-image"  mode="scaleToFill"/>
 			</swiper-item>
 		</block>
 	</swiper>

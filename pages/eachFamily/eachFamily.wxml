@@ -49,7 +49,7 @@
 	<view id="face" class="list" bindtap="openCamera">
 		<text>人脸识别</text>
 	</view>
-	<block wx:if="{{familyInfo.face}}">
+	<block wx:if="{{imgUrl}}">
 		<text style="color:green;text-decoration: underline;" bindtap="showImg">人脸识别已认证通过</text>
 	</block>
 	<block wx:else>
@@ -59,7 +59,7 @@
 		<view style="height: 100%;width: 100%;position: absolute;left: 0;top: 0;background: rgba(0,0,0,.6);z-index: 10;"
 		      bindtap="hideImg">
 			<image style="width: 70%;position: absolute;left: calc(50% - (70%/2));top: 20%;z-index: 2"
-			       src="{{familyInfo.face}}"
+			       src="{{imgUrl}}"
 			       mode="aspectFit"></image>
 		</view>
 	</block>

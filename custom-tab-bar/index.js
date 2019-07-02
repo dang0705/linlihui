@@ -13,13 +13,19 @@ Component({
 				selectedIconPath: "/common/img/sq_s.png",
 				text: "社区"
 			},
-			{
+			/*{
 				pagePath: "/pages/myOrder/myOrder",
 				iconPath: "/common/img/qinr.png",
 				selectedIconPath: "/common/img/qinr_s.png",
 				text: "我的活动"
 			},
-
+*/
+			{
+				pagePath: "/pages/expZone/expZone",
+				iconPath: "/common/img/qinr.png",
+				selectedIconPath: "/common/img/qinr_s.png",
+				text: "体验区"
+			},
 			{
 				pagePath: "/pages/my/my",
 				iconPath: "/common/img/my.png",
@@ -53,6 +59,7 @@ Component({
 				url,
 				success() {
 					console.log(data.index);
+
 					that.setData({
 						selected: data.index
 					});
@@ -68,7 +75,16 @@ Component({
 						iconPath: "/common/img/qinr.png",
 						selectedIconPath: "/common/img/qinr_s.png",
 						text: "所有活动"
-					},
+					}
+				});
+			}else {
+				this.setData({
+					[ 'list[1]' ]: {
+						pagePath: "/pages/expZone/expZone",
+						iconPath: "/common/img/qinr.png",
+						selectedIconPath: "/common/img/qinr_s.png",
+						text: "体验区"
+					}
 				});
 			}
 		},

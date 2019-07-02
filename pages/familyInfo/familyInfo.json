@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "ec-canvas": "../components/ec-canvas/ec-canvas",
+    "selector": "../components/selector/selector"
+  },
+  "navigationBarBackgroundColor": "#f18603",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "一家亲",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light"
+}

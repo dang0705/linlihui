@@ -1,16 +1,12 @@
+const myTools = require("../../../common/js/myTools");
 Component({
 	behaviors: [],
 	// 属性定义（详情参见下文）
 	properties: {},
 	data: {
-		imgUrls: [
-			'../../../common/img/b1.jpg',
-			'../../../common/img/b2.jpg',
-			'../../../common/img/b3.jpg',
-			'../../../common/img/b4.jpg',
-		],
+		imgUrls: [],
 		indicatorDots: true,
-		indicatorActiveColor:'#f18603',
+		indicatorActiveColor: '#f18603',
 		autoplay: false,
 		interval: 5000,
 		duration: 1000
@@ -18,6 +14,7 @@ Component({
 	lifetimes: {
 		// 生命周期函数，可以为函数，或一个在methods段中定义的方法名
 		attached: function () {
+			this._getBanner()
 		},
 		moved: function () {
 		},
@@ -42,6 +39,18 @@ Component({
 	},
 	methods: {
 		// 内部方法建议以下划线开头
-
+		_getBanner() {
+			const that=this;
+			myTools.ajax('GetAllMetaDataByType',{
+				MetaDataType:'BannerImg'
+			}).then(res=>{
+				console.log(res);
+				if ( res.status === 1 ) {
+					that.setData({
+						imgUrls:res.content
+					})
+				}
+			})
+		}
 	}
 })

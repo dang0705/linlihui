@@ -91,6 +91,7 @@ const
 
 	/*上传人脸识别图片*/
 	uploadImg = function (that, mobile, url, openid) {
+		console.log(mobile);
 		return new Promise((resolve, reject) => {
 			wx.chooseImage({
 				count: 1,
@@ -108,6 +109,57 @@ const
 						filePath: tempFilePaths[ 0 ],
 						name: 'file',
 						formData: {
+							EmployeePhone: mobile || app.globalData.mobile,
+							EmployeeCode: mobile,
+							EmployeeOpenId: openid || ''
+						},
+						header: {
+							'content-type': 'multipart/form-data'
+						},
+						success(res) {
+							app.globalData.face = true;
+							hideLoading();
+							res = JSON.parse(res.data);
+							console.log(res);
+							resolve(res);
+						}
+					})
+				}
+			})
+		})
+	},
+
+	/*通用上传文件*/
+	uploadFile = function (that, mobile, url, openid,fileName) {
+		console.log(mobile);
+		return new Promise((resolve, reject) => {
+			wx.chooseImage({
+				count: 1,
+				sizeType: [ 'original', 'compressed' ],
+				sourceType: [ 'camera', 'album' ],
+				success(res) {
+					console.log(res);
+					showLoading();
+					if ( res.errMsg !== 'chooseImage:ok' && !res.tempFilePaths.length ) {
+						hideLoading();
+						wx.showToast({
+							title: '图片选择失败,请重新选择',
+							icon: 'none'
+						})
+					}
+					/*	else {
+							that.setData({
+								[ 'imgUrl' ]: res.tempFilePaths[ 0 ]
+							});
+						}*/
+
+					const tempFilePaths = res.tempFilePaths;
+					wx.uploadFile({
+						url: url || 'https://xt.shi1.cn/api/PubliceApi/PublicePostFiles',
+						filePath: tempFilePaths[ 0 ],
+						name: 'file',
+						formData: {
+							FolderName:fileName,
 							EmployeePhone: mobile || app.globalData.mobile,
 							EmployeeCode: mobile,
 							EmployeeOpenId: openid || ''
@@ -278,14 +330,19 @@ const
 	/*自定义tabBar*/
 	getTabBar = function (that, tabIndex) {
 		let activity = {};
-
 		// 判断是否领导,不是就是用户和发布者
 		if ( app.globalData.roleId !== '2' ) {
-			activity = {
+			/*activity = {
 				pagePath: "/pages/myOrder/myOrder",
 				iconPath: "/common/img/qinr.png",
 				selectedIconPath: "/common/img/qinr_s.png",
 				text: "我的活动"
+			}*/
+			activity = {
+				pagePath: "/pages/expZone/expZone",
+				iconPath: "/common/img/qinr.png",
+				selectedIconPath: "/common/img/qinr_s.png",
+				text: "体验区"
 			}
 		} else {
 			activity = {
@@ -294,6 +351,12 @@ const
 				selectedIconPath: "/common/img/qinr_s.png",
 				text: "所有活动"
 			}
+		/*	activity = {
+				pagePath: "/pages/expZone/expZone",
+				iconPath: "/common/img/qinr.png",
+				selectedIconPath: "/common/img/qinr_s.png",
+				text: "体验区"
+			}*/
 
 		}
 		that.getTabBar().setData({
@@ -311,6 +374,7 @@ module.exports = {
 	nullToEmpty: nullToEmpty,
 	clearSpaceAndEnter: clearSpaceAndEnter,
 	uploadImg: uploadImg,
+	uploadFile: uploadFile,
 	pagingAjax: pagingAjax,
 	unLogin: unLogin,
 	getTabBar: getTabBar
